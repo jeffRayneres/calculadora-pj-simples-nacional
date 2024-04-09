@@ -62,5 +62,5 @@ class Calculator:
         annual_salary = salary * 12
         effective_tax_rate = (annual_salary * bracket_info['tax_rate'] - bracket_info[
             'deductible_amount']) / annual_salary
-        print("Taxa efetiva: %.2f" % effective_tax_rate)
+        #print("Taxa efetiva: %.2f" % effective_tax_rate)
         return effective_tax_rate
