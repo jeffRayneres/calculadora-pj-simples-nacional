@@ -1,4 +1,4 @@
-from IRTaxTableEnum import IRTaxTableEnum
+from IRTaxTableEnum import IRTaxTableEnum, IRTaxTableEnum
 from RFactorTaxEnum import RFactorTaxEnum
 
 
@@ -7,25 +7,25 @@ class Calculator:
         pass
 
     def calculate_IR(self, salary):
+
         bracket1 = IRTaxTableEnum.BRACKET_1.value
         bracket2 = IRTaxTableEnum.BRACKET_2.value
         bracket3 = IRTaxTableEnum.BRACKET_3.value
         bracket4 = IRTaxTableEnum.BRACKET_4.value
         bracket5 = IRTaxTableEnum.BRACKET_5.value
-        
+
         IR_tax = 0
 
-        if salary < bracket1['upper']:
-            IR_tax = salary * bracket1['tax_rate']
-        elif bracket2['lower'] <= salary <= bracket2['upper']:
-            IR_tax = salary * bracket2['tax_rate']
-        elif bracket3['lower'] <= salary <= bracket3['upper']:
-            IR_tax = bracket2['cumulative_tax'] + (salary - bracket3['lower']) * bracket3['tax_rate']
-        elif bracket4['lower'] <= salary <= bracket4['upper']:
-            IR_tax = bracket3['cumulative_tax'] + (salary - bracket4['lower']) * bracket4['tax_rate']
-        elif salary >= bracket5['lower']:
-            IR_tax = bracket4['cumulative_tax'] + (salary - bracket5['lower']) * bracket5['tax_rate']
-
+        if salary < bracket1['limit']:
+            IR_tax = salary * bracket1['tax_rate'] - bracket1['deductible_amount']
+        elif salary < bracket2['limit']:
+            IR_tax = salary * bracket2['tax_rate'] - bracket2['deductible_amount']
+        elif salary < bracket3['limit']:
+            IR_tax = salary * bracket3['tax_rate'] - bracket3['deductible_amount']
+        elif salary < bracket4['limit']:
+            IR_tax = salary * bracket4['tax_rate'] - bracket4['deductible_amount']
+        elif salary < bracket5['limit']:
+            IR_tax = salary * bracket5['tax_rate'] - bracket5['deductible_amount']
         return IR_tax
 
     def calculate_INSS(self, value):
@@ -62,5 +62,5 @@ class Calculator:
         annual_salary = salary * 12
         effective_tax_rate = (annual_salary * bracket_info['tax_rate'] - bracket_info[
             'deductible_amount']) / annual_salary
-        #print("Taxa efetiva: %.2f" % effective_tax_rate)
+        # print("Taxa efetiva: %.2f" % effective_tax_rate)
         return effective_tax_rate
