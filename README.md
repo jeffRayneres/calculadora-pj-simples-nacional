@@ -8,7 +8,7 @@ Aqui é possível calcular os descontos e o salário líquido. Neste caso, é fe
 
 ### Pré-requisitos
 
-- Python 3.6 ou superior
+- Python
 - Git (para clonar o repositório)
 
 ### Execução
