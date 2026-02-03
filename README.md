@@ -1,4 +1,4 @@
-# ATENÇÃO! Os cálculos ainda não está atualizado com as regras do IR 2026
+# ATENÇÃO! Os cálculos ainda não estão atualizado com as regras do IR 2026
 
 # Calculadora PJ para Simples Nacional
 
