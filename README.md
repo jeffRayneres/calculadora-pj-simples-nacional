@@ -1,3 +1,5 @@
+# ATENÇÃO! Os cálculos ainda não está atualizado com as regras do IR 2026
+
 # Calculadora PJ para Simples Nacional
 
 O objetivo deste projeto é auxiliar trabalhadores autônomos, especialmente desenvolvedores, que prestam serviço como PJ e escolhem o Simples Nacional.
